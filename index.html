@@ -36,7 +36,7 @@
  			socket = io();
  			
  			$(document).ready(function(){
- 				socket.emit('off');
+ 				socket.emit('ready');
  				log('ready');
 
  				$('#on').on('click', function(){
