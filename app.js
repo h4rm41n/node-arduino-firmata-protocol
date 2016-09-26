@@ -33,5 +33,10 @@ board.on('ready', function(){
 			console.log("off");
 			led.off();
 		});
+
+		socket.on('ready', function(){
+			console.log("off");
+			led.off();
+		});
     });
 })
