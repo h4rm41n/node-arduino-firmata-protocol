@@ -20,8 +20,8 @@
 	<body>
 	<div class="container">
 		<h1>Socket.io handle led arduino</h1>
-		<button type="button" class="btn btn-primary" id="on">On</button>
-		<button type="button" class="btn btn-danger" id="off">Off</button>
+		<button type="button" class="btn btn-primary" id="on"><i class="glyphicon glyphicon-ok"></i> On</button>
+		<button type="button" class="btn btn-danger" disabled id="off"><i class="glyphicon glyphicon-off"></i> Off</button>
 		<div id="show"></div>
 	</div>
 		
@@ -36,13 +36,18 @@
  			socket.on('cuap', function(data){
  				$("#show").html(data);
  			})
+
  			$('#on').on('click', function(){
  				socket.emit('on');
+ 				$(this).attr('disabled',true);
+ 				$("#off").attr('disabled',false);
  				console.log('on');
  			});
 
  			$('#off').on('click', function(){
  				socket.emit('off');
+ 				$(this).attr('disabled',true);
+ 				$("#on").attr('disabled',false);
  				console.log('off');
  			});
  		</script>
