@@ -32,24 +32,37 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
  		<script>
+ 			
  			socket = io();
- 			socket.on('cuap', function(data){
- 				$("#show").html(data);
- 			})
-
- 			$('#on').on('click', function(){
- 				socket.emit('on');
- 				$(this).attr('disabled',true);
- 				$("#off").attr('disabled',false);
- 				console.log('on');
- 			});
-
- 			$('#off').on('click', function(){
+ 			
+ 			$(document).ready(function(){
  				socket.emit('off');
- 				$(this).attr('disabled',true);
- 				$("#on").attr('disabled',false);
- 				console.log('off');
+ 				log('off');
+
+ 				$('#on').on('click', function(){
+	 				socket.emit('on');
+	 				btn(true, false);
+	 				log('on');
+	 			});
+
+	 			$('#off').on('click', function(){
+	 				socket.emit('off');
+	 				btn(false, true);
+	 				log('off');
+	 			});
+
+	 			function btn(onBtn, offBtn){
+	 				$("#on").attr('disabled', onBtn);
+	 				$("#off").attr('disabled', offBtn);
+	 			}
+
+	 			function log(msg){
+	 				return console.log(msg);
+	 			}
  			});
+
+
+ 			
  		</script>
 	</body>
 </html>
