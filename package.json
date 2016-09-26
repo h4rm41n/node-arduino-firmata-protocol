@@ -1,0 +1,25 @@
+{
+  "name": "node-arduino-firmata-protocol",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h4rm41n/node-arduino-firmata-protocol.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h4rm41n/node-arduino-firmata-protocol/issues"
+  },
+  "homepage": "https://github.com/h4rm41n/node-arduino-firmata-protocol#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "johnny-five": "^0.10.0",
+    "socket.io": "^1.4.8"
+  }
+}
